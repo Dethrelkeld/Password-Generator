@@ -13,29 +13,42 @@ var lowerArray = lowerCaseString.split("");
 // an array of individual upper case letters
 var upperArray = lowerCaseString.toUpperCase().split("");
 
-console.log(specialArray, upperArray, lowerArray)
+console.log(specialArray, upperArray, lowerArray);
 
 // create Number Array
-// create Special Array
 
-// This is a function to determine length of password desired
+// This is a function to determine options of password: length, numbers, symbols, upper or lowercase
 function getOptions() {
   var length = parseInt(prompt("How many characters in your password (between 8 and 128?)"));
+  
+  var hasNumb = confirm("Would you like numbers?");
+
+  var hasSymb = confirm("Would you like special symbols?");
+
+  var hasLower = confirm("Would you like lowercase letters?");
+
+  var hasUpper = confirm("Would you like uppercase letters?");
+
+  // if it is a number between 128 and 8 set the length of password
   if(isNaN(length) === true || length > 128 || length < 8) {
     alert("not valid number");
     return;
   }
   console.log(length);
-  var hasLower = confirm("Would you like lowercase letters?");
-  var hasUpper = confirm("Would you like uppercase letters?");
-  if(hasLower === false  && hasUpper === false) {
+  
+  
+
+  if(hasLower === false  && hasUpper === false && hasNumb === false && hasSymb === false) {
     alert("Please choose a valid character type");
     return;
   }
   var options =  {
-    length: length,
-    hasLower: hasLower,
-    hasUpper: hasUpper
+    length, 
+    hasLower, 
+    hasUpper,
+    hasNumb,
+    hasSymb 
+
   }
   return options
 }
