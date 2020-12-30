@@ -1,10 +1,10 @@
-// Assignment Code
+// declaring the button as a js variable
 var generateBtn = document.querySelector("#generate");
 
 // a string of symbols
-var symbolString = "!@#$%^&*()"
+var symbString = "!@#$%^&*()"
 // an array of individual symbols
-var specialArray = symbolString.split("")
+var symbArray = symbString.split("")
 
 // a string of letters
 var lowerCaseString = "abcdefghijklmnopqrstuvwxyz";
@@ -13,7 +13,12 @@ var lowerArray = lowerCaseString.split("");
 // an array of individual upper case letters
 var upperArray = lowerCaseString.toUpperCase().split("");
 
-console.log(specialArray, upperArray, lowerArray);
+// a string of numbers
+var numbString = "1234567890"
+// an array of individual numbers
+var numbArray = numbString.split("")
+
+console.log(symbArray, upperArray, lowerArray, numbArray);
 
 // create Number Array
 
@@ -37,11 +42,13 @@ function getOptions() {
   console.log(length);
   
   
-
+  // if they don't pick anything tell them to pick something
   if(hasLower === false  && hasUpper === false && hasNumb === false && hasSymb === false) {
     alert("Please choose a valid character type");
     return;
   }
+
+  // one object to group all of the option objects
   var options =  {
     length, 
     hasLower, 
@@ -74,6 +81,12 @@ function generatePassword() {
   }
   if(options2.hasUpper === true) {
     bigArray = bigArray.concat(upperArray)
+  }
+  if(options2.hasNumb === true) {
+    bigArray = bigArray.concat(numbArray)
+  }
+  if(options2.hasSymb === true) {
+    bigArray = bigArray.concat(symbArray)
   }
 
   for(var i = 0; i < options2.length; i++) {
