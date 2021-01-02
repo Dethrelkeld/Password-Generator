@@ -24,52 +24,50 @@ console.log(symbArray, upperArray, lowerArray, numbArray);
 // This is a function to determine options of password: length, numbers, symbols, upper or lowercase
 function getOptions() {
   var length = parseInt(prompt("How many characters in your password (between 8 and 128?)"));
+
+    // if it is a number between 128 and 8 set the length of password
+    if(isNaN(length) === true || length > 128 || length < 8) {
+      alert("not valid number");
+      return;
+    }
+    console.log(length);
   
   var hasNumb = confirm("Would you like numbers?");
   // Number validation
     if(hasNumb === true) {
-      alert("Your password will have numbers")
+      alert("Your password will have numbers");
     }  
     else {
-      alert("Your password will not have numbers")
+      alert("Your password will not have numbers");
     }
 
   var hasSymb = confirm("Would you like special symbols?");
     // Symbol validation
     if(hasSymb === true) {
-      alert("Your password will have symbols")
+      alert("Your password will have symbols");
     }
     else {
-      alert("Your password will not have symbols")
+      alert("Your password will not have symbols");
     }
 
   var hasLower = confirm("Would you like lowercase letters?");
     // Lowercase validation
     if(hasLower === true) {
-      alert("Your password will have lowercase letters")
+      alert("Your password will have lowercase letters");
     }
     else {
-      alert("Your password will not have lowercase letters")
+      alert("Your password will not have lowercase letters");
     }
 
   var hasUpper = confirm("Would you like uppercase letters?");
     // Uppercase validation
     if(hasUpper === true) {
-      alert("Your password will have uppercase letters")
+      alert("Your password will have uppercase letters");
     }
     else {
-      alert("Your password will not have uppercase letters")
+      alert("Your password will not have uppercase letters");
     }
-
-
-
-  // if it is a number between 128 and 8 set the length of password
-  if(isNaN(length) === true || length > 128 || length < 8) {
-    alert("not valid number");
-    return;
-  }
-  console.log(length);
-  
+ 
   
   // if they don't pick anything tell them to pick something
   if(hasLower === false  && hasUpper === false && hasNumb === false && hasSymb === false) {
