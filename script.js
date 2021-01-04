@@ -33,40 +33,12 @@ function getOptions() {
     console.log(length);
   
   var hasNumb = confirm("Would you like numbers?");
-  // Number validation
-    if(hasNumb === true) {
-      alert("Your password will have numbers");
-    }  
-    else {
-      alert("Your password will not have numbers");
-    }
 
   var hasSymb = confirm("Would you like special symbols?");
-    // Symbol validation
-    if(hasSymb === true) {
-      alert("Your password will have symbols");
-    }
-    else {
-      alert("Your password will not have symbols");
-    }
-
+ 
   var hasLower = confirm("Would you like lowercase letters?");
-    // Lowercase validation
-    if(hasLower === true) {
-      alert("Your password will have lowercase letters");
-    }
-    else {
-      alert("Your password will not have lowercase letters");
-    }
 
   var hasUpper = confirm("Would you like uppercase letters?");
-    // Uppercase validation
-    if(hasUpper === true) {
-      alert("Your password will have uppercase letters");
-    }
-    else {
-      alert("Your password will not have uppercase letters");
-    }
  
   
   // if they don't pick anything tell them to pick something
@@ -84,7 +56,7 @@ function getOptions() {
     hasSymb 
 
   }
-  return options
+  return options;
 }
 
 // Write password to the #password input
