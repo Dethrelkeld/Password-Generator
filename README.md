@@ -2,6 +2,8 @@
 
 https://dethrelkeld.github.io/Password-Generator/
 
+![A screenshot of the website in action](./assets/PasswordGenerator.PNG)
+
 The purpose of this project is to create a password string generator in the browser using javascript. 
 
 The variables used:
